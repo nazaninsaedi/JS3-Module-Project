@@ -1,3 +1,32 @@
+.body {
+  background-color: antiquewhite;
+}
 #root {
-  color: red;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.episode {
+  border: 1px solid #eea2a2;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.episode h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.episode p {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #f54848;
+}
+
+.episode img {
+  max-width: 100%;
+  height: auto;
 }
