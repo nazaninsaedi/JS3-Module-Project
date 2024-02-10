@@ -60,6 +60,8 @@ input.addEventListener("input", function () {
   render();
 });
 
+const dropDownMenu = document.getElementById("list");
+
 
 window.onload = setup;
 
