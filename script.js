@@ -22,6 +22,11 @@ function makePageForEpisodes(episodeList) {
     episodeImage.alt = episode.name;
     const episodeSummary = document.createElement("p");
     episodeSummary.innerHTML = episode.summary;
+    const episodeOption = document.createElement("option");
+    episodeOption.value = episode.id;
+    episodeOption.text = `${episodeCode} - ${episode.name}`;
+    dropDownMenu.appendChild(episodeOption);
+    episodeDiv.id = `episode - ${episode.id}`;
 
     episodeDiv.appendChild(episodeTitle);
     episodeDiv.appendChild(seasonNumber);
@@ -52,16 +57,40 @@ function render() {
   });
 
   makePageForEpisodes(filteredEpisodes);
+
+  document.getElementById("search-info").textContent = `Displaying ${filteredEpisodes.length} / 73 episodes`;
 };
 
 const input = document.querySelector("#q");
+
 input.addEventListener("input", function () {
   state.searchTerm = input.value.toLowerCase();
   render();
 });
 
-const dropDownMenu = document.getElementById("list");
+const dropDownMenu = document.getElementById("select");
+dropDownMenu.addEventListener("change", function () {
+  const selectedValue = dropDownMenu.value;
 
+  if (selectedValue === "all") {
+    render(state.allEpisodes);
+  }
+  else {
+    const selectedEpisode = state.allEpisodes.find((episode) => episode.id === parseInt(selectedValue));
+    render([selectedEpisode]);
+    navigateToEpisode(selectedEpisode);
+  }
+});
+
+function navigateToEpisode(episode) {
+  if (episode) {
+    const episodeElement = document.getElementById(`episode - ${episode.id}`);
+
+    if (episodeElement) {
+      episodeElement.scrollIntoView({behavior: "smooth"});
+    }
+  }
+}
 
 window.onload = setup;
 

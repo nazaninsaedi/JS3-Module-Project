@@ -16,10 +16,13 @@
 
 <body>
   <section id="film-container">
-    <select name="list" id="list"></select>
+    <select name="list" id="select">
+      <option value="" selected disabled>Select your episode</option>
+    </select>
     <label>
-      <input type="search" id="q" name="q" placeholder="Search term" /> 🔍
+      <input type="search" id="q" name="q" placeholder="Search term" /> 
     </label>
+    <span id="search-info"></span>
   </section>
   <div id="root"></div>
 </body>
