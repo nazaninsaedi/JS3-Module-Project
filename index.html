@@ -4,20 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TV Show Project | My name(Nazanin Saedi)</title>
+  <title>TV Show Project | Nazanin Saedi</title>
   <link href="style.css" rel="stylesheet">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
+  <script defer src="episodes.js"></script>
+
+  <!-- Loads YOUR javascript code -->
+  <script defer src="script.js"></script>
 </head>
 
 <body>
+  <section id="film-container">
+    <select name="list" id="select">
+      <option value="" selected disabled>Select your episode</option>
+    </select>
+    <label>
+      <input type="search" id="q" name="q" placeholder="Search term" /> 
+    </label>
+    <span id="search-info"></span>
+  </section>
   <div id="root"></div>
-  <h3>Hello tesst</h3>
-
-  <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
-  <script src="episodes.js"></script>
-
-  <!-- Loads YOUR javascript code -->
-  <script src="script.js"></script>
 </body>
 
 </html>
