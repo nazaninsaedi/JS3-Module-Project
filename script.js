@@ -46,9 +46,17 @@
 //   rootElem.appendChild(attribution);
 // }
 
+async function getAllEpisodes (){
+
+  const allEpisodes = await fetch("https://api.tvmaze.com/shows/82/episodes"); 
+  return await allEpisodes.json();
+}
+
+
+
 // window.onload = setup;
-function setup() {
-  const allEpisodes = getAllEpisodes();
+async function setup() {
+  const allEpisodes = await getAllEpisodes();
   state.allEpisodes = allEpisodes;
   makePageForEpisodes(allEpisodes);
 }
