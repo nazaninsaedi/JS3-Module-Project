@@ -7,24 +7,22 @@
   <title>TV Show Project | Nazanin Saedi</title>
   <link href="style.css" rel="stylesheet">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <!-- Loads YOUR javascript code -->
-  <script defer src="script.js"></script>
 </head>
 
 <body>
   <section id="film-container">
-    <select name="list" id="select">
-      <option value="" selected disabled>Select your episode</option>
+    <select id="show-select">
+      <option value="" selected disabled>Select a TV show</option>
     </select>
-    <label>
-      <input type="search" id="q" name="q" placeholder="Search term" /> 
-    </label>
+    <input type="search" id="q" name="q" placeholder="Search term" />
     <span id="search-info"></span>
   </section>
   <div id="root">
     <!-- Placeholder for episodes. Filled by JavaScript -->
-    <p>Loading episodes...</p>
   </div>
+
+  <script defer src="script.js"></script>
 </body>
 
 </html>
+
